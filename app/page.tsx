@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Scale, Home, HeartHandshake, MessageCircle } from "lucide-react";
 
-export default function Home() {
+export default function SiteBarbaraLopes() {
   return (
     <div className="min-h-screen bg-[#F7F5F4] text-[#2B2B2B] font-serif">
       {/* Header */}
@@ -34,13 +35,15 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
-  <img
-    src="/foto-barbara.png"
-    alt="Bárbara Lopes – Advogada"
-    className="w-full h-full object-cover"
-  />
-</div>
+        <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
+          <Image
+            src="/foto-barbara.png"
+            alt="Bárbara Lopes – Advogada"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </section>
 
       {/* Sobre */}
@@ -92,13 +95,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Forma de Atuação */}
+      <section className="bg-[#EFEAE8] py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <h3 className="text-3xl mb-8">Forma de Atuação</h3>
+          <ul className="space-y-4 text-lg text-[#555555]">
+            <li>• Atendimento personalizado e escuta atenta</li>
+            <li>• Análise técnica individualizada de cada caso</li>
+            <li>• Comunicação clara e transparente</li>
+            <li>• Atuação ética e responsável, conforme o Código da OAB</li>
+          </ul>
+        </div>
+      </section>
+
       {/* Contato */}
       <section className="max-w-6xl mx-auto px-6 py-20 text-center">
         <h3 className="text-3xl mb-6">Contato</h3>
         <p className="text-lg text-[#555555] mb-8">
           Para informações e orientações jurídicas, entre em contato.
         </p>
-        <a href="https://wa.me/5513982281060" target="_blank">
+        <a
+          href="https://wa.me/5513982281060"
+          target="_blank"
+        >
           <Button className="bg-[#5E142B] text-white hover:opacity-90">
             Falar pelo WhatsApp
           </Button>
