@@ -1,52 +1,118 @@
-export default function SiteBarbaraLopes() {
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { Scale, Home, HeartHandshake, MessageCircle } from "lucide-react";
+
+export default function Home() {
   return (
-    <div style={{ fontFamily: "serif", backgroundColor: "#5E142B", color: "#fff" }}>
-      
+    <div className="min-h-screen bg-[#F7F5F4] text-[#2B2B2B] font-serif">
       {/* Header */}
-      <div style={{ padding: "30px", display: "flex", justifyContent: "space-between" }}>
-        <h2>Bárbara Lopes • Advocacia</h2>
-        <a href="https://wa.me/5513982281060" target="_blank">
-          <button style={{ background: "#E8616E", color: "#fff", padding: "10px 20px", border: "none" }}>
-            Contato via WhatsApp
-          </button>
+      <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+        <h1 className="text-xl tracking-wide">Bárbara Lopes Advocacia</h1>
+        <a
+          href="https://wa.me/5513982281060"
+          target="_blank"
+          className="flex items-center gap-2 text-sm text-[#5E142B] hover:opacity-80"
+        >
+          <MessageCircle size={18} />
+          WhatsApp
         </a>
-      </div>
+      </header>
 
       {/* Hero */}
-      <div style={{ padding: "60px 30px" }}>
-        <h1>Advocacia pautada na ética, técnica e acolhimento humano</h1>
-        <p style={{ maxWidth: "600px" }}>
-          Atuação profissional nas áreas Cível, Família e Imobiliário, com mais de 5 anos de
-          experiência, prestando assessoria jurídica de forma ética e responsável, em
-          conformidade com o Código de Ética e Disciplina da OAB.
-        </p>
-      </div>
+      <section className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14 items-center">
+        <div>
+          <h2 className="text-4xl leading-tight mb-6">
+            Advocacia com atuação ética,<br />
+            técnica e acolhedora
+          </h2>
+          <p className="text-lg text-[#555555] mb-8 leading-relaxed">
+            Atuação profissional nas áreas de Direito Civil, Direito de Família e Direito
+            Imobiliário, com foco em orientação jurídica responsável, atendimento humanizado
+            e soluções construídas de forma clara e transparente.
+          </p>
+          <Button className="bg-[#5E142B] text-white hover:opacity-90">
+            Agendar atendimento
+          </Button>
+        </div>
 
-      {/* Áreas */}
-      <div style={{ background: "#fff", color: "#000", padding: "40px" }}>
-        <h2>Áreas de Atuação</h2>
-        <ul>
-          <li><strong>Direito Civil</strong> — contratos, obrigações e responsabilidade civil</li>
-          <li><strong>Direito de Família</strong> — divórcio, guarda, pensão e partilha</li>
-          <li><strong>Direito Imobiliário</strong> — compra e venda, locação e regularização</li>
-        </ul>
-      </div>
+        <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
+          <Image
+            src="/foto-barbara.png"
+            alt="Bárbara Lopes – Advogada"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </section>
 
       {/* Sobre */}
-      <div style={{ padding: "40px" }}>
-        <h2>Sobre a Advogada</h2>
-        <p>
-          Sou Bárbara Lopes, advogada há mais de 5 anos, com atuação nas áreas cível,
-          família e imobiliária. Minha trajetória é pautada pela ética, escuta ativa
-          e responsabilidade profissional.
+      <section className="bg-white py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <h3 className="text-3xl mb-8">Sobre a Advogada</h3>
+          <p className="text-lg text-[#555555] leading-relaxed">
+            Sou Bárbara Lopes, advogada com mais de cinco anos de atuação profissional,
+            dedicada às áreas cível, familiar e imobiliária. Minha trajetória é pautada pela
+            ética, pelo estudo contínuo e pela responsabilidade no exercício da advocacia.
+            <br /><br />
+            Acredito que o Direito deve ser exercido com sensibilidade, técnica e clareza,
+            respeitando a individualidade de cada caso e oferecendo ao cliente segurança
+            jurídica e orientação consciente em momentos importantes de sua vida.
+          </p>
+        </div>
+      </section>
+
+      {/* Áreas de Atuação */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <h3 className="text-3xl mb-12 text-center">Áreas de Atuação</h3>
+        <div className="grid md:grid-cols-3 gap-10">
+          <div className="bg-white p-8 rounded-2xl shadow-sm">
+            <Scale className="mb-4 text-[#5E142B]" />
+            <h4 className="text-xl mb-3">Direito Civil</h4>
+            <p className="text-[#555555]">
+              Atuação em demandas cíveis de forma estratégica e responsável, envolvendo
+              contratos, responsabilidade civil, obrigações e conflitos patrimoniais.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-2xl shadow-sm">
+            <HeartHandshake className="mb-4 text-[#5E142B]" />
+            <h4 className="text-xl mb-3">Direito de Família</h4>
+            <p className="text-[#555555]">
+              Atuação em questões familiares com atenção à dimensão jurídica e humana,
+              abrangendo divórcios, pensão alimentícia, guarda, união estável e partilha de bens.
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-2xl shadow-sm">
+            <Home className="mb-4 text-[#5E142B]" />
+            <h4 className="text-xl mb-3">Direito Imobiliário</h4>
+            <p className="text-[#555555]">
+              Assessoria jurídica em negócios e conflitos imobiliários, incluindo compra e
+              venda, locação, regularização de imóveis e análise contratual.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contato */}
+      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h3 className="text-3xl mb-6">Contato</h3>
+        <p className="text-lg text-[#555555] mb-8">
+          Para informações e orientações jurídicas, entre em contato.
         </p>
-      </div>
+        <a href="https://wa.me/5513982281060" target="_blank">
+          <Button className="bg-[#5E142B] text-white hover:opacity-90">
+            Falar pelo WhatsApp
+          </Button>
+        </a>
+      </section>
 
       {/* Footer */}
-      <div style={{ background: "#000", color: "#ccc", padding: "20px", fontSize: "14px" }}>
-        © {new Date().getFullYear()} Bárbara Lopes Advocacia <br />
-        Site com caráter exclusivamente informativo, nos termos do Código de Ética e Disciplina da OAB.
-      </div>
+      <footer className="bg-[#2B2B2B] text-[#D5CDCB] py-10 text-center text-sm">
+        © {new Date().getFullYear()} Bárbara Lopes Advocacia · Conteúdo meramente informativo,
+        nos termos do Código de Ética e Disciplina da OAB.
+      </footer>
     </div>
   );
 }
