@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { Scale, Home, HeartHandshake, MessageCircle } from "lucide-react";
 
 export default function Home() {
@@ -35,15 +34,13 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
-          <Image
-            src="/foto-barbara.png"
-            alt="Bárbara Lopes – Advogada"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        <div className="w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
+  <img
+    src="/foto-barbara.png"
+    alt="Bárbara Lopes – Advogada"
+    className="w-full h-full object-cover"
+  />
+</div>
       </section>
 
       {/* Sobre */}
